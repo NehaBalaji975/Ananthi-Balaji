@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #8b0000, #000);
+      color: #fff;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .navbar a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .navbar a.active {
+      border-bottom: 2px solid #fff;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      text-align: center;
+    }
+    .random-view img {
+      max-width: 600px;
+      max-height: 400px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+    .caption {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .primary {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #c62828;
+      color: white;
+      transition: background 0.3s;
+    }
+    .primary:hover {
+      background: #a31515;
+    }
+    /* First-load centering */
+    .center-first {
+      justify-content: center;
+      min-height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">Ananthi ❤ Balaji</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="page1.html">Text Page 1</a>
+      <a href="page2.html">Text Page 2</a>
+    </div>
+  </div>
+
+  <div class="container center-first" id="galleryContainer">
+    <div class="random-view">
+      <img id="photo">
+      <div class="caption" id="caption"></div>
+    </div>
+    <button class="primary" id="nextBtn">Show a Random Memory</button>
+  </div>
+
+  <script>
+    const photos = [
+     { src: "assets/images/gallery/02.jpg", caption: "Sulking in serene silence" },
+      { src: "assets/images/gallery/03.jpg", caption: "A trip down the lane, through the roads of Kanyakumari." },
+      { src: "assets/images/gallery/04.jpg", caption: "In the vast expanse of scenic view." },
+      { src: "assets/images/gallery/05.jpg", caption: "Amidst the trees, stood two hearts joint by love." },
+      { src: "assets/images/gallery/06.jpg", caption: "Just another special occassion and the casual happiness." },
+      { src: "assets/images/gallery/07.jpg", caption: "The young couples dwelling deep in love." },
+      { src: "assets/images/gallery/08.jpg", caption: "A new furniture waa added and so was the added joy and content." },
+      { src: "assets/images/gallery/09.jpg", caption: "Blurred frames, yet they don't fail to depict a casual domestic household." },
+      { src: "assets/images/gallery/10.jpg", caption: "And that's how the hotel bed, and their daughter's camera saw them in love." },
+      { src: "assets/images/gallery/11.jpg", caption: "In Rameshwaram, the waves fought to crash, while the love broke over the sea." },
+      { src: "assets/images/gallery/12.jpg", caption: "At Times, Even the camera blushes to witness them in love, that it closes it's lens, clicking a picture" },
+      { src: "assets/images/gallery/13.jpg", caption: "In the waters of Kerala, the two fishes were undeniably in love." },
+      { src: "assets/images/gallery/14.jpg", caption: "The Athrapalli falls not just witnessed the force of falling water but also the force of love." },
+      { src: "assets/images/gallery/15.jpg", caption: "A stare was all that needed, a stare that didn't know the reason, yet found the purpose in establishing the cuteness." },
+      { src: "assets/images/gallery/16.jpg", caption: "Draped in traditionals, they sat down to relax in the hectic and overloaded responsibilities of the function." },
+      { src: "assets/images/gallery/17.jpg", caption: "Yet another illustration of elegance oozing through the hidden smiles and love." },
+      { src: "assets/images/gallery/18.jpg", caption: "The ocean like blue and cloud like white when mixed together, looks like them." },
+      { src: "assets/images/gallery/19.jpg", caption: "The sky was large and vast and so was the statue in behind, but can we speak about their smile and love that was large and vast enough too?" },
+      { src: "assets/images/gallery/20.jpg", caption: "Their daughter was spoiling the photo mood, but yet they managed to click one, where their heartfelt smiles are seen." },
+      { src: "assets/images/gallery/21.jpg", caption: "Pongal it was, not just flowing up with pongal, but also with togetherness." },
+      { src: "assets/images/gallery/22.jpg", caption: "It was the 15th anniversary, bubbling with joy and happiness amidst the hurry to start earlier." },
+      { src: "assets/images/gallery/23.jpg", caption: "Their baby girl was growing big, and so were they, growing matured and old." },
+      { src: "assets/images/gallery/24.jpg", caption: "Nine years later, they stood in the same areas of Rameshwaram, with more grey hairs and older faces, yet with the same amount of love." }
+    ];
+
+    let unusedPhotos = [...photos];
+    let firstClick = true;
+
+    const photoEl = document.getElementById("photo");
+    const captionEl = document.getElementById("caption");
+    const nextBtn = document.getElementById("nextBtn");
+    const galleryContainer = document.getElementById("galleryContainer");
+
+    function showRandomPhoto() {
+      if (unusedPhotos.length === 0) {
+        unusedPhotos = [...photos].sort(() => Math.random() - 0.5);
+      }
+      const item = unusedPhotos.pop();
+      photoEl.src = item.src;
+      captionEl.textContent = item.caption;
+
+      if (firstClick) {
+        galleryContainer.classList.remove("center-first");
+        firstClick = false;
+      }
+    }
+
+    // Show one random photo immediately when page loads
+    document.addEventListener("DOMContentLoaded", () => {
+      showRandomPhoto();
+    });
+
+    nextBtn.addEventListener("click", showRandomPhoto);
+  </script>
+</body>
+</html>

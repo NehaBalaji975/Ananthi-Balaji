@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Text Page 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --nav-h: 64px;         /* navbar height */
+    }
+
+    /* Page */
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #000000, #8b0000);
+      font-family: Georgia, serif;
+      color: #fff;
+      height: 100vh;         /* lock to viewport height */
+      overflow: hidden;      /* prevent page scroll */
+    }
+
+    /* Navbar (fixed) */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: #2b0000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      box-sizing: border-box;
+      z-index: 10;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    .navbar a.active { border-bottom: 2px solid #ffcc00; }
+
+    /* Stage fills the area under the fixed navbar */
+.stage {
+  position: absolute;
+  top: var(--nav-h);
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Parchment */
+.scroll-container {
+  position: relative;
+  height: 120%;                 /* use height so full scroll fits */
+  max-height: 850px;           /* cap for very large screens */
+  aspect-ratio: 2 / 3;         /* keep parchment proportion */
+  background: url("assets/images/scroll.png") no-repeat center center / contain;
+}
+
+
+    /* Text area INSIDE the parchment */
+    .scroll-content {
+      position: absolute;
+      /* tune these percentages to match your scroll image edges */
+      top: 12%;
+      bottom: 13%;
+      left: 11%;
+      right: 11%;
+
+      overflow-y: auto;       /* only this scrolls */
+      color: #000;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* Scrollbar styling */
+    .scroll-content::-webkit-scrollbar { width: 8px; }
+    .scroll-content::-webkit-scrollbar-thumb { background: #5a2a2a; border-radius: 10px; }
+    .scroll-content { scrollbar-width: thin; scrollbar-color: #5a2a2a transparent; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html">Ananthi ❤ Balaji</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="page1.html">Text Page 1</a>
+      <a href="page2.html"class="active">Text Page 2</a>
+    </div>
+  </div>
+
+  <!-- Content area (fixed screen, no page scroll) -->
+  <div class="stage">
+    <div class="scroll-container">
+      <div class="scroll-content">
+        <h2 style="text-align:center; margin-top:0;">A Journey of Love</h2>
+        <p>A week ago a friend invited a couple of other couples over for dinner. Eventually, the food (but not the wine) was cleared off the table for what turned out to be some fierce Scrabbling. Heeding the strategy of going for the shorter, more valuable word over the longer cheaper word, our final play was “Bon,” which–as luck would have it!–happens to be a Japanese Buddhist festival, and not, as I had originally asserted while laying the tiles on the board, one half of a chocolate-covered cherry treat. Anyway, the strategy worked. My team only lost by 53 points instead of 58.
+
+Just the day before, our host had written of the challenges of writing short. In journalism–my friend’s chosen trade, and mostly my own, too–Mark Twain’s observation undoubtedly applies: “I didn’t have time to write a short letter, so I wrote a long one instead.” The principle holds across genres, in letters, reporting, and other writing. It’s harder to be concise than to blather. (Full disclosure, this blog post will clock in at a blather-esque 803 words.) Good writing is boiled down, not baked full of air like a souffl??. No matter how yummy souffl??s may be. Which they are. Yummy like a Grisham novel.
+
+Lately, I’ve been noticing how my sentences have a tendency to keep going when I write them onscreen. This goes for concentrated writing as well as correspondence. (Twain probably believed that correspondence, in an ideal world, also demands concentration. But he never used email.) Last week I caught myself packing four conjunctions into a three-line sentence in an email. That’s inexcusable. Since then, I have tried to eschew conjunctions whenever possible. Gone are the commas, the and’s, but’s, and so’s; in are staccato declaratives. Better to read like bad Hemingway than bad Faulkner.
+
+Length–as we all know, and for lack of a more original or effective way of saying it–matters. But (ahem), it’s also a matter of how you use it. Style and length are technically two different things....</p>
+        <p>The memories they have created are not simply photographs in albums ...</p>
+        <p>Marriage is often compared to a garden. It requires patience, nurturing, and care ...</p>
+        <p>As they celebrate this anniversary, it is not just a date on the calendar but ...</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
