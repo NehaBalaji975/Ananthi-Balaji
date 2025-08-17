@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>English Letter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --nav-h: 64px;         /* navbar height */
+    }
+
+    /* Page */
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #000000, #8b0000);
+      font-family: Georgia, serif;
+      color: #fff;
+      height: 100vh;         /* lock to viewport height */
+      overflow: hidden;      /* prevent page scroll */
+    }
+
+    /* Navbar (fixed) */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: #2b0000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      box-sizing: border-box;
+      z-index: 10;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    .navbar a.active { border-bottom: 2px solid #ffcc00; }
+
+    /* Stage fills the area under the fixed navbar */
+.stage {
+  position: absolute;
+  top: var(--nav-h);
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Parchment */
+.scroll-container {
+  position: relative;
+  height: 120%;                 /* use height so full scroll fits */
+  max-height: 850px;           /* cap for very large screens */
+  aspect-ratio: 2 / 3;         /* keep parchment proportion */
+  background: url("assets/images/scroll.png") no-repeat center center / contain;
+}
+
+
+    /* Text area INSIDE the parchment */
+    .scroll-content {
+      position: absolute;
+      /* tune these percentages to match your scroll image edges */
+      top: 12%;
+      bottom: 13%;
+      left: 11%;
+      right: 11%;
+
+      overflow-y: auto;       /* only this scrolls */
+      color: #000;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* Scrollbar styling */
+    .scroll-content::-webkit-scrollbar { width: 8px; }
+    .scroll-content::-webkit-scrollbar-thumb { background: #5a2a2a; border-radius: 10px; }
+    .scroll-content { scrollbar-width: thin; scrollbar-color: #5a2a2a transparent; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html">Ananthi ❤ Balaji</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="page1.html">Tamil</a>
+      <a href="page2.html"class="active">English</a>
+    </div>
+  </div>
+
+  <!-- Content area (fixed screen, no page scroll) -->
+  <div class="stage">
+    <div class="scroll-container">
+      <div class="scroll-content">
+        <h2 style="text-align:center; margin-top:0;">A Journey of Love</h2>
+        <p> At the age of 20, I see you both, turning your beautiful beginnings into a 21-year-old marriage. Having seen you the 95% of your marriage life, I could definitely tell that it wasn't an easy journey. It had its own share of troubles and hurdles. There were fights, there were a lot of shouting and yelling, there were a lot of pain, there were a lot of stumbling stones. But at the end, each and every time, I saw you both ace through it, I saw you both growing out of it, or accepting it. Every time there was a fight, it was messy and chaotic, testing the mental health and patience, but at the end, you guys behave like nothing happened. Throughout the years, there were many hurdles, where you both needed one another, and almost through all of it, I saw you having each other’s back and being the biggest pillar of support for one another. In the times of smile, I saw you both smiling to the fullest of hearts. In the times of dullness, I saw that reigning over too. You've genuinely shown me that life has both sides, the bright and the dark. Your love has fuelled the levels of happiness in the house. As much as there were annoying chaotic fights, there were also sweet and silly ones, making me hit my head at the very thought of having to raise my parents.</p>
+<br>
+<p>“Love doesn’t make the world go round. Love is what makes the ride worthwhile.” - Franklin P. Jones </p>
+<br>
+<p>And isn't that right? What is love all about, if it's just about saying okay and being compromised immediately? (Remember that one story we read in pratilipi Ananthi, where I got fed up since there was no spice or masala!) And just like that, you guys have always been high on love and high on family drama and well, never short of action sequences. If I could critically review the action sequences, I would suggest you both to coach Lokesh Kanagaraj to improve his stunt scenes.</p>
+<br>
+<p>Let me add this one of my favorite lines from reels and complete this short write up. "Boyfriends and girlfriends may come and go, but this is for life!" - Indeed. What started in 2004 may at betrothal, is standing strong in 2025 wedding anniversary, and this will go on for decades.</p>
+<br>
+<p>Happy Wedding Anniversary, Amma and Daddy!
+</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

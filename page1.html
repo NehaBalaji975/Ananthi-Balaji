@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Tamil Letter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --nav-h: 64px;         /* navbar height */
+    }
+
+    /* Page */
+    html, body {
+      height: 100%;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #000000, #8b0000);
+      font-family: Georgia, serif;
+      color: #fff;
+      height: 100vh;         /* lock to viewport height */
+      overflow: hidden;      /* prevent page scroll */
+    }
+
+    /* Navbar (fixed) */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: #2b0000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      box-sizing: border-box;
+      z-index: 10;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+    .navbar a.active { border-bottom: 2px solid #ffcc00; }
+
+    /* Stage fills the area under the fixed navbar */
+.stage {
+  position: absolute;
+  top: var(--nav-h);
+  left: 0; right: 0; bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Parchment */
+.scroll-container {
+  position: relative;
+  height: 120%;                 /* use height so full scroll fits */
+  max-height: 850px;           /* cap for very large screens */
+  aspect-ratio: 2 / 3;         /* keep parchment proportion */
+  background: url("assets/images/scroll.png") no-repeat center center / contain;
+}
+
+
+    /* Text area INSIDE the parchment */
+    .scroll-content {
+      position: absolute;
+      /* tune these percentages to match your scroll image edges */
+      top: 12%;
+      bottom: 13%;
+      left: 11%;
+      right: 11%;
+
+      overflow-y: auto;       /* only this scrolls */
+      color: #000;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* Scrollbar styling */
+    .scroll-content::-webkit-scrollbar { width: 8px; }
+    .scroll-content::-webkit-scrollbar-thumb { background: #5a2a2a; border-radius: 10px; }
+    .scroll-content { scrollbar-width: thin; scrollbar-color: #5a2a2a transparent; }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html">Ananthi ❤ Balaji</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="page1.html" class="active">Tamil</a>
+      <a href="page2.html">English</a>
+    </div>
+  </div>
+
+  <!-- Content area (fixed screen, no page scroll) -->
+  <div class="stage">
+    <div class="scroll-container">
+      <div class="scroll-content">
+        <h2 style="text-align:center; margin-top:0;">A Journey of Love</h2>
+        <p>2004ஆம் ஆண்டு இணைந்த இரு மனங்கள், இன்றும், ஒன்றோடு ஒன்றாய் அழகுற கலந்து, காதல் ராகம் பாடி உலா வருகின்றன.</p>
+
+<p>ஒன்பதுக்கு தூங்கி நான்குக்கு விழிக்கும் அவனும், நான்குக்கு தூங்கி, ஐந்திற்கு விழிக்கும் அவளும் ஒரே தூக்கத்தில்.</p>
+<br>
+<p>அனைவரும் வேண்டும் என்று, குடும்பப் பாடல் பாடுபவள் அவள். யாரும் வேண்டாம், நாம் மட்டுமே போதும் என்று, மகிழ்ச்சி பாடல் பாடுபவன் அவன்.</p>
+<br>
+<p>வாயை அடக்க அறியாத அவளும், வாய திறக்க மறுக்கும் அவனும். காதும் வாயை போல் கூர்மை அவளுக்கு, கேட்டாலும் கேட்காதது போல் பாசாங்கு செய்வான் அவன்.</p>
+<br>
+<p>வெளியே உண்ண விரும்புபவள் அவள், வீட்டுச் சோறு ருசி தெரியுமா என்பவன் அவன்.</p>
+<br>
+<p>நமக்காக வாழு என்று பக்கம் பக்கமாய் பேசுவாள், ஆனால் அவனோ, பிறர் என்ன நினைப்பார் என்று நினைத்தே காலத்தை ஓட்டுவான்.</p>
+<br>
+<p>ஒன்றிற்கும் ஒன்று சுத்தமாக ஒற்றுமை இல்லையே, ஒத்து வாழ்கிறாரா என்றால், ஆம், 21 ஆண்டுகள் கழிந்து விட்டன.</p>
+<br>
+<p>அவள் தூக்கத்தை அவனோ, அவன் தூக்கத்தை அவள் கெடுப்பதில்லை.</p>
+<br>
+<p>அவளும், தனிமையின் ருசிகண்டு பழக, அவனும் வாய் மூட அறியாது போனான்.</p>
+<br>
+<p>பல உணவகம் புதிதாய் தேடினான் அவன், இருவரின் ருசி தேவையை போர்க்க, ஆனாலும், சில நேரங்களில் தனக்காகவும், அவளுகாகவும் தான் இந்த வாழ்க்கை என்பதை மறந்து தான் போனான்.</p>
+<br>
+<p>இவர்களை காணும்பொழுதே உணர்ந்தேன், காதல் என்பது, ஒத்து போவது அல்ல, பொருந்தா குணங்களைக் கூட, ஓட்ட வைப்பதே என்று!</p>
+<br>
+<p>இனிய திருமண நாள் நல்வாழ்த்துக்கள்</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
